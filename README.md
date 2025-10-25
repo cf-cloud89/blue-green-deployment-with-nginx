@@ -7,8 +7,8 @@ It's designed to run two identical application containers (`blue` and `green`) b
 ## File Structure
 
 -   `docker-compose.yml`: Orchestrates the `nginx`, `app_blue`, and `app_green` services.
--   `nginx.conf.template`: Nginx config template. Variables (`${...}`) are injected by the entrypoint script.
--   `entrypoint.sh`: The script that runs in the Nginx container to generate the final config from the template.
+-   `nginx.conf.template`: Nginx config template. Variables (`${...}`) are injected by the nginx-init script.
+-   `nginx-init.sh`: The script that runs in the Nginx container to generate the final config from the template.
 -   `.env.example`: Provides example environment variables.
 -   `README.md`: This file.
 
@@ -23,7 +23,7 @@ It's designed to run two identical application containers (`blue` and `green`) b
     ```
 
 2.  **Make Entrypoint Executable:**
-    The `entrypoint.sh` script must have execute permissions to run inside the container.
+    The `nginx-init.sh` script must have execute permissions to run inside the container.
 
     ```sh
     chmod +x nginx-init.sh
