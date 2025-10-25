@@ -26,7 +26,7 @@ It's designed to run two identical application containers (`blue` and `green`) b
     The `entrypoint.sh` script must have execute permissions to run inside the container.
 
     ```sh
-    chmod +x entrypoint.sh
+    chmod +x nginx-init.sh
     ```
 
 3.  **Start Services:**
