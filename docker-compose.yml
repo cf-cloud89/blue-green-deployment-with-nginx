@@ -9,6 +9,7 @@ services:
     environment:
       - PORT=${PORT}
       - RELEASE_ID=${RELEASE_ID_BLUE}
+      - APP_POOL=blue
     networks:
       - app-network
 
@@ -20,6 +21,7 @@ services:
     environment:
       - PORT=${PORT}
       - RELEASE_ID=${RELEASE_ID_GREEN}
+      - APP_POOL=green
     networks:
       - app-network
 
