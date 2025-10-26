@@ -3,6 +3,9 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
+# Install gettext-utils, which provides the 'envsubst' command
+apk add --no-cache gettext
+
 echo "Starting Nginx's nginx-init script..."
 echo "Active pool is: $ACTIVE_POOL"
 
