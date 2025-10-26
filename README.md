@@ -28,7 +28,7 @@ These instructions assume you are running on a remote cloud server (e.g., AWS EC
 
 2.  **Clone the Repository**
     ```sh
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    git clone https://github.com/cf-cloud89/blue-green-deployment-with-nginx.git
     cd your-repo-name
     ```
 
