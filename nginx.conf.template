@@ -14,7 +14,7 @@ server {
 
         # Retry policy: if the upstream returns an error, timeout, or
         # any 5xx error, automatically retry on the next server (the backup).
-        proxy_next_upstream error timeout http_5xx;
+        proxy_next_upstream error timeout http_500 http_502 http_503 http_504;
         
         # This ensures the retry happens on the backup server
         proxy_next_upstream_tries 2;

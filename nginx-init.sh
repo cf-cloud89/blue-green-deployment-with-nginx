@@ -19,7 +19,7 @@ fi
 
 # 2. Use envsubst to substitute variables in the template
 #    and create the final config file for Nginx to use.
-envsubst < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf
+envsubst '$PORT $BLUE_STATUS $GREEN_STATUS' < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf
 
 echo "Nginx config generated:"
 cat /etc/nginx/conf.d/default.conf
