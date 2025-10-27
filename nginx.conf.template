@@ -1,6 +1,6 @@
 upstream my_app {
-    server app_blue:${PORT}  ${BLUE_STATUS}  max_fails=1 fail_timeout=10s;
-    server app_green:${PORT} ${GREEN_STATUS} max_fails=1 fail_timeout=10s;
+    server app_blue:${PORT}  ${BLUE_STATUS}  max_fails=1 fail_timeout=2s;
+    server app_green:${PORT} ${GREEN_STATUS} max_fails=1 fail_timeout=2s;
 }
 
 server {
@@ -9,8 +9,8 @@ server {
     location / {
         # Set short timeouts. Total request time budget is < 10s.
         # If a connection or read takes > 3s, it's considered a failure.
-        proxy_connect_timeout 3s;
-        proxy_read_timeout 3s;
+        proxy_connect_timeout 1s;
+        proxy_read_timeout 1s;
 
         # Retry policy: if the upstream returns an error, timeout, or
         # any 5xx error, automatically retry on the next server (the backup).
