@@ -145,3 +145,9 @@ curl -i http://[YOUR_SERVER_IP]:8080/version
     curl -i http://[YOUR_SERVER_IP]:8080/version
     ```
 **Expected Output:** All traffic should now go directly to Green (`X-App-Pool: green`), and Blue (`X-App-Pool: blue`) will now be serving as the backup.
+
+---
+
+### Additional Note
+
+I included a Bash `test-script` file you can use to test the setup after installing the needed tools and setting everything up.
