@@ -16,7 +16,14 @@ It's designed to run two identical application containers (blue and green) behin
 
 These instructions assume you are running on a remote cloud server (e.g., AWS EC2).
 
-1.  **Install Git, Docker, and Docker Compose**
+1.  **SSH into the Cloud Server and Clone the Repository**
+    ```sh
+    ssh -i ~/.ssh/<your-key-pair> username@<YOUR-IP-ADDRESS/HOSTNAME>
+    git clone https://github.com/cf-cloud89/blue-green-deployment-with-nginx.git
+    cd your-repo-name
+    ```
+
+2.  **Install Git, Docker, and Docker Compose**
     You must have Docker and Docker Compose installed. On modern Linux systems, this is often installed as a Docker plugin.
     * Follow the [official Docker install instructions](https://docs.docker.com/engine/install/) for your Linux distribution.
     * Ensure you install the `docker-compose-plugin` (or `docker compose`).
@@ -25,12 +32,6 @@ These instructions assume you are running on a remote cloud server (e.g., AWS EC
         sudo usermod -aG docker $USER
         ```
     * **Important:** You must log out and log back in for this change to take effect.
-
-2.  **Clone the Repository**
-    ```sh
-    git clone https://github.com/cf-cloud89/blue-green-deployment-with-nginx.git
-    cd your-repo-name
-    ```
 
 3.  **Prepare Environment File**
     Copy the example `.env` file. You **must** edit this file to add your container image URLs for `BLUE_IMAGE` and `GREEN_IMAGE`.
