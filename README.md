@@ -18,7 +18,7 @@ These instructions assume you are running on a remote cloud server (e.g., AWS EC
 
 1.  **SSH into the Cloud Server and Clone the Repository**
     ```sh
-    ssh -i ~/.ssh/<your-key-pair> username@<YOUR-IP-ADDRESS/HOSTNAME>
+    ssh -i ~/.ssh/[your-key-pair] username@[YOUR-IP-ADDRESS/HOSTNAME]
     git clone https://github.com/cf-cloud89/blue-green-deployment-with-nginx.git
     cd your-repo-name
     ```
